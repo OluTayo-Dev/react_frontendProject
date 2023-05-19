@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './component/Home';
+import Carousel from './component/carousel';
+import Quotes from './component/Quotes';
+import Github from './component/github';
 import './App.css';
+import './component/github.css';
+import './component/Quote.css'
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+   <Routes>
+       <Route path="/Home" element={<Home />} />
+       <Route path="/carousel" element={<Carousel />} />
+       <Route path="/Quotes" element={<Quotes />} />
+       <Route path="/github" element={<Github />} />
+      
+   </Routes>
+ </BrowserRouter>
   );
 }
-
-export default App;
